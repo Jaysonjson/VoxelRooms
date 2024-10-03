@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://csojrmuffsww"]
+
+[ext_resource type="Shader" path="res://base/assets/shaders/movy_boy.gdshader" id="1_nkj1f"]
+
+[resource]
+shader = ExtResource("1_nkj1f")
+shader_parameter/time_mod = 567.19
+shader_parameter/y_mod = 3.666
+shader_parameter/x_mod = 3.144

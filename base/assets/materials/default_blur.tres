@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://1ei04pymaid3"]
+
+[ext_resource type="Shader" path="res://base/assets/shaders/blur.gdshader" id="1_gedpw"]
+
+[resource]
+shader = ExtResource("1_gedpw")
+shader_parameter/amount = 1.118
+shader_parameter/time_mod = null
+shader_parameter/color_mod = 0.517
+shader_parameter/y_mod = null
+shader_parameter/x_mod = null

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://fx1wu6cx6cju"]
+
+[ext_resource type="Script" path="res://base/scripts/csharp/dev_console/DevConsole.cs" id="1_cs472"]
+[ext_resource type="Material" uid="uid://d4m0xjeoxxn5x" path="res://base/assets/materials/dev_console.tres" id="2_rqtps"]
+[ext_resource type="FontFile" uid="uid://c8u6jqo0gb4au" path="res://base/assets/fonts/Barlow-Medium.ttf" id="4_030iq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvya6"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.956863)
+
+[node name="DevConsole" type="Control" node_paths=PackedStringArray("InputNode", "ContainerNode", "LogNode")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cs472")
+InputNode = NodePath("ConsoleContainer/ConsoleInput")
+ContainerNode = NodePath("ConsoleContainer")
+LogNode = NodePath("ConsoleContainer/ConsoleLog")
+
+[node name="ConsoleContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.27502
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlurBackground" type="ColorRect" parent="ConsoleContainer"]
+material = ExtResource("2_rqtps")
+layout_mode = 2
+
+[node name="ConsoleLog" type="RichTextLabel" parent="ConsoleContainer"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+theme_override_font_sizes/mono_font_size = 15
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+
+[node name="ConsoleInput" type="LineEdit" parent="ConsoleContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_placeholder_color = Color(0.374139, 0.374139, 0.374139, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_030iq")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_pvya6")
+placeholder_text = "Enter Command; Use help for help"
+clear_button_enabled = true
+caret_blink = true
