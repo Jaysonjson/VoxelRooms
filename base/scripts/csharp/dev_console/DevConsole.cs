@@ -25,7 +25,7 @@ public partial class DevConsole : Control
         //InputNode = ContainerNode.GetChild<LineEdit>(2);
         //LogNode = ContainerNode.GetChild<RichTextLabel>(1);
         //InputNode = GetNode<LineEdit>("DevConsole/CommandInput");
-        PrintConsoleLine("Zeitriss Dev Console");
+        PrintConsoleLine("VoxelRooms Dev Console");
         PrintConsoleInformation("Information Line");
         PrintConsoleSubInformation("Subinformation Line Row 0");
         PrintConsoleSubInformation("Subinformation Line Row 1", true);
@@ -49,11 +49,6 @@ public partial class DevConsole : Control
                     InputNode.Text = History[CurrentHistoryIndex];
                 }
             }
-        }
-
-        /* FULLSCREN TOGGLE */
-        if(Input.IsActionJustPressed("toggle_fullscreen")) {
-            DisplayServer.WindowSetMode(DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Windowed ? DisplayServer.WindowMode.ExclusiveFullscreen : DisplayServer.WindowMode.Windowed);
         }
     }
 
