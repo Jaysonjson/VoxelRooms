@@ -6,12 +6,12 @@ public partial class PlayerMovement : CharacterBody3D
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 	public float Sensitivity = 0.005f;
-	private Camera3D camera;
+	[Export]
+	private Camera3D Camera;
 	
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
-		camera = GetNode<Camera3D>("Camera3D");
 	}
 
 	public override void _UnhandledInput(InputEvent @e)
@@ -21,11 +21,11 @@ public partial class PlayerMovement : CharacterBody3D
 			case InputEventMouseMotion:
 				InputEventMouseMotion mMotion = e as InputEventMouseMotion;
 				RotateY(-mMotion.Relative.X * Sensitivity);
-				camera.RotateX(-mMotion.Relative.Y * Sensitivity);
+				Camera.RotateX(-mMotion.Relative.Y * Sensitivity);
 				
-				Vector3 camRot = camera.Rotation;
+				Vector3 camRot = Camera.Rotation;
 				camRot.X = Mathf.Clamp(camRot.X, Mathf.DegToRad(-90f), Mathf.DegToRad(90f));
-				camera.Rotation = camRot;
+				Camera.Rotation = camRot;
 				break;
 		}
 	}

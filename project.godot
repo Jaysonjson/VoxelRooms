@@ -17,6 +17,10 @@ boot_splash/image="res://splash.png"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1470
 
+[autoload]
+
+SteamworksTest="*res://base/scripts/csharp/steam/SteamworksTest.cs"
+
 [dotnet]
 
 project/assembly_name="Voxelrooms"

@@ -1,7 +1,7 @@
 using Godot;
 using System.IO;
 
-public partial class Voxelrooms {
+public class Voxelrooms {
     public static class DC {
         public static DiscordNode.DiscordCache Cache { get; set; } = new();
 
